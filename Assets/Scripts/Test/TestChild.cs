@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestBase : MonoBehaviour
+public class TestChild : TestBase
 {
     // Start is called before the first frame update
 //    void Start()
 //    {
-//        Debug.Log("TestBase::Start");
+//        Debug.Log("TestChild::Start");
 //    }
 //
 //    // Update is called once per frame
 //    void Update()
 //    {
-//        
+//        PrintTest();
 //    }
 
-    public void PrintTest()
+    public void PrintTest_TestChild()
     {
-        Debug.Log("TestBase::PrintTest");
+        Debug.Log("TestChild::PrintTest");
     }
 }
