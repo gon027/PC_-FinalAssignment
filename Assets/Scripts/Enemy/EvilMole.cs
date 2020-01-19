@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mole : Character
+public class EvilMole : Character
 {
-    
     void Start()
     {
         
@@ -12,6 +11,6 @@ public class Mole : Character
 
     void Update()
     {
-        
+        ;
     }
 }

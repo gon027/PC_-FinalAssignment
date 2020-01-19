@@ -6,7 +6,7 @@ public class MaterialChange : MonoBehaviour {
     [SerializeField] private GameObject testObject1;
     [SerializeField] private GameObject testObject2;
     [SerializeField] private GameObject testObject3;
-    [SerializeField] private GameObject hummer;
+    [SerializeField] private GameObject hummer; 
     private Material tMaterial1;
     private Material tMaterial2;
     private Material tMaterial3;

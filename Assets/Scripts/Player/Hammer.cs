@@ -15,14 +15,14 @@ public class Hammer : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetKey(KeyCode.G))
-        {
-            animator.SetBool("is_Action", true);
-        }
-        else
-        {
-            animator.SetBool("is_Action", false);
-        }
+//        if (Input.GetKey(KeyCode.G))
+//        {
+//            animator.SetBool("is_Action", true);
+//        }
+//        else
+//        {
+//            animator.SetBool("is_Action", false);
+//        }
     }
 
     public void Action()
@@ -31,10 +31,10 @@ public class Hammer : MonoBehaviour
     }
 
     void  OnTriggerEnter(Collider other) {
-        if (other.CompareTag("moguraTest")){
+//        if (other.CompareTag("moguraTest")){
             Debug.Log("HIT!!!");
-            hitCheck = true;
-        }
+//            hitCheck = true;
+//        }
     }
 
     void OnTriggerExit(Collider other) {

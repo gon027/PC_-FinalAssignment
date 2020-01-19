@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EvilMole : Character
+public class Mole : Character
 {
     void Start()
     {
@@ -11,6 +11,10 @@ public class EvilMole : Character
 
     void Update()
     {
+        
+    }
+    
+    void  OnTriggerEnter(Collider other) {
         
     }
 }
