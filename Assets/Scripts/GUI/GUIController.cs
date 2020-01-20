@@ -1,18 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GUIController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameManager gManager;
+    [SerializeField] private Text scoreText;
+    [SerializeField] private Text timeText;
+
+    private static string scoreStr = "Score: ";
+    private static string timeStr = "Time: ";
+
     void Start()
     {
-        
+        scoreText.text = scoreStr + 0.ToString();
+        timeText.text = timeStr + 0.ToString();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        scoreText.text = scoreStr + gManager.score.ToString();
+        timeText.text = timeStr + gManager.time.ToString();
     }
 }

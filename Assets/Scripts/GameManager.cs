@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     
     public int score { get; set; }
     private const float MAXTIME = 60.0f;
-    private float time;
+    public float time { get; set; }
     
     void Start()
     {
