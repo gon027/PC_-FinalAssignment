@@ -7,6 +7,9 @@ public class Hammer : MonoBehaviour
     
     private Animator animator;
     public bool hitCheck { get; set; }
+    public bool hitMole1Check { get; set; }
+    public bool hitMole2Check { get; set; }
+    public bool hitMole3Check { get; set; }
 
     void Start()
     {
@@ -15,14 +18,7 @@ public class Hammer : MonoBehaviour
     }
 
     void Update() {
-//        if (Input.GetKey(KeyCode.G))
-//        {
-//            animator.SetBool("is_Action", true);
-//        }
-//        else
-//        {
-//            animator.SetBool("is_Action", false);
-//        }
+        
     }
 
     public void Action()
@@ -31,10 +27,10 @@ public class Hammer : MonoBehaviour
     }
 
     void  OnTriggerEnter(Collider other) {
-//        if (other.CompareTag("moguraTest")){
+        if (other.CompareTag("Mole")){
             Debug.Log("HIT!!!");
-//            hitCheck = true;
-//        }
+            hitCheck = true;
+        }
     }
 
     void OnTriggerExit(Collider other) {
