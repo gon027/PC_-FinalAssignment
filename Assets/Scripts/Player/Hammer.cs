@@ -17,7 +17,7 @@ public class Hammer : MonoBehaviour
     }
 
     void Update() {
-        Debug.Log("hit1 : " + hitMole1Check);
+        //Debug.Log("hit1 : " + hitMole1Check);
     }
 
     public void Action()
@@ -26,38 +26,40 @@ public class Hammer : MonoBehaviour
         animator.SetBool("is_Action", false);
     }
 
+    // 多分使わない
+    // 別の方法が実装次第すぐ削除
     void  OnTriggerEnter(Collider other) {
         if (other.name.Equals("Mole1"))
         {
-            hitMole1Check = true;
+            //hitMole1Check = true;
         }
         
         if (other.name.Equals("Mole2"))
         {
-            hitMole2Check = true;
+//            hitMole2Check = true;
         }
         
         if (other.name.Equals("Mole3"))
         {
-            hitMole3Check = true;
+//            hitMole3Check = true;
         }
     }
 
     void OnTriggerExit(Collider other) {
-        Debug.Log(12378);
+        //Debug.Log(12378);
 //        if (other.name.Equals("Mole1"))
 //        {
-            hitMole1Check = false;
+            //hitMole1Check = false;
 //        }
         
 //        if (other.name.Equals("Mole2"))
 //        {
-            hitMole2Check = false;
+//            hitMole2Check = false;
 //        }
         
 //        if (other.name.Equals("Mole3"))
 //        {
-            hitMole3Check = false;
+//            hitMole3Check = false;
 //        }
         
     }

@@ -4,17 +4,5 @@ using UnityEngine;
 
 public class Mole : Character
 {
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
     
-    void  OnTriggerEnter(Collider other) {
-        
-    }
 }

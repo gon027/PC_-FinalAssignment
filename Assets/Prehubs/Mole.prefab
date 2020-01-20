@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8814718702920245290}
   - component: {fileID: 6859833862469168086}
   - component: {fileID: 6159572393495905280}
-  - component: {fileID: 4999045850757258198}
   m_Layer: 0
   m_Name: left-eye
   m_TagString: Untagged
@@ -78,19 +77,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &4999045850757258198
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2093921541601591122}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2220339906416317111
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,8 +89,8 @@ GameObject:
   - component: {fileID: 1655304291213831737}
   - component: {fileID: 1882060361897875425}
   - component: {fileID: 2665981481846034824}
-  - component: {fileID: 728350588679813821}
   - component: {fileID: 132001093173823592}
+  - component: {fileID: 728350588679813821}
   m_Layer: 0
   m_Name: Mole
   m_TagString: Untagged
@@ -191,18 +177,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &728350588679813821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2220339906416317111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 083247f2e9e3a4623a9e09927ff07f77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &132001093173823592
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -219,6 +193,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &728350588679813821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2220339906416317111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 083247f2e9e3a4623a9e09927ff07f77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2699487593390341283
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +216,6 @@ GameObject:
   - component: {fileID: 7301100108042956201}
   - component: {fileID: 1737772525591611043}
   - component: {fileID: 6399298599769261246}
-  - component: {fileID: 2088058290015006609}
   m_Layer: 0
   m_Name: right-hand
   m_TagString: Untagged
@@ -297,19 +282,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &2088058290015006609
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2699487593390341283}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3312955815173952509
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +293,6 @@ GameObject:
   - component: {fileID: 8796544081812992298}
   - component: {fileID: 2144543501656233805}
   - component: {fileID: 3725380387430161540}
-  - component: {fileID: 9197596881933349092}
   m_Layer: 0
   m_Name: nose
   m_TagString: Untagged
@@ -388,19 +359,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &9197596881933349092
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3312955815173952509}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4790747651477510359
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +370,6 @@ GameObject:
   - component: {fileID: 4630992604852892247}
   - component: {fileID: 5932387524585072056}
   - component: {fileID: 2613134419760417853}
-  - component: {fileID: 1879239120676615961}
   m_Layer: 0
   m_Name: right-eye
   m_TagString: Untagged
@@ -479,19 +436,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &1879239120676615961
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4790747651477510359}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4920577769768535410
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +447,6 @@ GameObject:
   - component: {fileID: 5813453395022421837}
   - component: {fileID: 6909885327794307523}
   - component: {fileID: 5549590354778097180}
-  - component: {fileID: 2929222341578485757}
   m_Layer: 0
   m_Name: left-hand
   m_TagString: Untagged
@@ -570,19 +513,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &2929222341578485757
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4920577769768535410}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6167822621233681726
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +524,6 @@ GameObject:
   - component: {fileID: 1250435004351575492}
   - component: {fileID: 8651430731067002160}
   - component: {fileID: 7367083968431866368}
-  - component: {fileID: 4629806194608060673}
   m_Layer: 0
   m_Name: mouse
   m_TagString: Untagged
@@ -661,16 +590,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &4629806194608060673
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6167822621233681726}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

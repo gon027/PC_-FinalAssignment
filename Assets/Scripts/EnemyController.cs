@@ -13,37 +13,36 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject mole;
     [SerializeField] private GameObject evilMole;
 
+    public GameObject[] moles;
+    private int moleLength;
+
     void Start()
     {
         hammer = hammerObject.GetComponent<Hammer>();
-//        Debug.Log(hammer);
-       
 
+        // ゲームが始まるともぐらのオブジェクトを全て非表示にする
         foreach (Transform e in pearent.transform)
         {
             e.gameObject.SetActive(false);
         }
+
+        // 後に使いやすくするために、parentから子要素を配列に格納する
+        moleLength = pearent.transform.childCount;
+        moles = new GameObject[moleLength];
+        for (int i = 0; i < moleLength; i++)
+        {
+            moles[i] = pearent.transform.GetChild(i).gameObject;
+            //moles[i].transform.gameObject.SetActive(false);
+//            Debug.Log();
+        }
+        
 
         StartCoroutine(Exec());
     }
 
     void Update()
     {
-        Debug.Log(hammer.hitMole1Check);
-        if (hammer.hitMole1Check)
-        {
-            pearent.transform.GetChild(0).gameObject.SetActive(false);
-        }
         
-        if (hammer.hitMole2Check)
-        {
-            pearent.transform.GetChild(1).gameObject.SetActive(false);
-        }
-        
-        if (hammer.hitMole3Check)
-        {
-            pearent.transform.GetChild(2).gameObject.SetActive(false);
-        }
     }
 
     IEnumerator Exec()

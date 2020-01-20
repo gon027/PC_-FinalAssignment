@@ -6,6 +6,7 @@ TagManager:
   tags:
   - moguraTest
   - Mole
+  - Hammer
   layers:
   - Default
   - TransparentFX

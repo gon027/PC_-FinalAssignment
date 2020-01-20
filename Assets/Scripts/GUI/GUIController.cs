@@ -14,7 +14,7 @@ public class GUIController : MonoBehaviour
 
     void Start()
     {
-        scoreText.text = scoreStr + 0.ToString();
+        scoreText.text = scoreStr + GameManager.MAXTIME.ToString();
         timeText.text = timeStr + 0.ToString();
     }
     

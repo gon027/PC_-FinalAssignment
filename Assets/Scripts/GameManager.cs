@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private Hammer hammer;
     
     public int score { get; set; }
-    private const float MAXTIME = 60.0f;
+    public static float MAXTIME = 60.0f;
     public float time { get; set; }
     
     void Start()
@@ -23,8 +23,7 @@ public class GameManager : MonoBehaviour
         player = playerObject.GetComponent<Player>();
         hammer = hammerObject.GetComponent<Hammer>();
         
-        
-        time = 0;
+        time = GameManager.MAXTIME;
     }
 
     void Update()
@@ -37,25 +36,19 @@ public class GameManager : MonoBehaviour
     {
         if (time >= MAXTIME)
         {
-//            Debug.Log("Time UP!!!!!");
-        }
-        else
-        {
-            time += Time.deltaTime;
-//            Debug.Log(time);
+            time -= Time.deltaTime;
         }
     }
 
     void CalcScore()
     {
-        if (hammer.hitMole1Check || hammer.hitMole2Check || hammer.hitMole3Check)
+        for (int i = 0; i < 3; i++)
         {
-            score++;
+            if (eController.moles[i].GetComponent<Character>().scoreCheck)
+            {
+                score++;
+                eController.moles[i].GetComponent<Character>().scoreCheck = false;
+            }
         }
-
-        //Debug.Log(score);
-//        Debug.Log(hammer.hitMole1Check);
-//        Debug.Log(hammer.hitMole2Check);
-//        Debug.Log(hammer.hitMole3Check);
     }
 }
