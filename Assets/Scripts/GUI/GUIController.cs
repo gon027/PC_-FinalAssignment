@@ -1,13 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO.Ports;
 
-public class PressureSensor : MonoBehaviour
+public class GUIController : MonoBehaviour
 {
-    SerialPort stream = new SerialPort("/dev/cu.usbmodem14202", 57600);
-    private bool isPressedA, isPressedB, isPressedC;   
-    
+    // Start is called before the first frame update
     void Start()
     {
         

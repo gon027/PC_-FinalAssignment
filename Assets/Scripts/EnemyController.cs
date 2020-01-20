@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    // 値を取得するためのGameObject
+    [SerializeField] private GameObject hammerObject;
+    private Hammer hammer;
+    
     // ゲーム内で使う敵のプレハブ
     [SerializeField] private GameObject pearent;
     [SerializeField] private GameObject mole;
     [SerializeField] private GameObject evilMole;
-    
+
     void Start()
     {
+        hammer = hammerObject.GetComponent<Hammer>();
+//        Debug.Log(hammer);
+       
+
         foreach (Transform e in pearent.transform)
         {
             e.gameObject.SetActive(false);
@@ -21,7 +29,21 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(hammer.hitMole1Check);
+        if (hammer.hitMole1Check)
+        {
+            pearent.transform.GetChild(0).gameObject.SetActive(false);
+        }
         
+        if (hammer.hitMole2Check)
+        {
+            pearent.transform.GetChild(1).gameObject.SetActive(false);
+        }
+        
+        if (hammer.hitMole3Check)
+        {
+            pearent.transform.GetChild(2).gameObject.SetActive(false);
+        }
     }
 
     IEnumerator Exec()

@@ -42,6 +42,15 @@ public class Player : MonoBehaviour
         }
     }
 
+//    IEnumerator VisibleHammer()
+//    {
+//        while (isVisible)
+//        {
+//            
+//            yield return null;
+//        }
+//    }
+
     void HammerPos(Vector3 _pos)
     {
         isVisible = true;

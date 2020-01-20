@@ -27,13 +27,33 @@ public class Hammer : MonoBehaviour
     }
 
     void  OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Mole")){
-            Debug.Log("HIT!!!");
-            hitCheck = true;
+//        if (other.CompareTag("Mole")){
+//            Debug.Log("HIT!!!");
+//            hitCheck = true;
+//        }
+
+        if (other.name.Equals("Mole1"))
+        {
+            hitMole1Check = true;
+            //Debug.Log("Mole1");
+        }
+        
+        if (other.name.Equals("Mole2"))
+        {
+            hitMole2Check = true;
+            //Debug.Log("Mole2");
+        }
+        
+        if (other.name.Equals("Mole3"))
+        {
+            hitMole3Check = true;
+            //Debug.Log("Mole3");
         }
     }
 
     void OnTriggerExit(Collider other) {
-        hitCheck = false;
+        hitMole1Check = false;
+        hitMole2Check = false;
+        hitMole3Check = false;
     }
 }

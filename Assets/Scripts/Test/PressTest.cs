@@ -62,4 +62,9 @@ public class PressTest : MonoBehaviour
             
         } 
     }
+
+    void MassageCheck(string _message, ref bool _isPressed)
+    {
+        
+    }
 }
