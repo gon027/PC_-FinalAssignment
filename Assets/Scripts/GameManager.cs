@@ -53,6 +53,9 @@ public class GameManager : MonoBehaviour
             score++;
         }
 
-        Debug.Log(score);
+        //Debug.Log(score);
+//        Debug.Log(hammer.hitMole1Check);
+//        Debug.Log(hammer.hitMole2Check);
+//        Debug.Log(hammer.hitMole3Check);
     }
 }

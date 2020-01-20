@@ -20,7 +20,7 @@ public class GUIController : MonoBehaviour
     
     void Update()
     {
-        scoreText.text = scoreStr + gManager.score.ToString();
-        timeText.text = timeStr + gManager.time.ToString();
+        scoreText.text = scoreStr + gManager.score.ToString("00");
+        timeText.text = timeStr + gManager.time.ToString("00");
     }
 }
