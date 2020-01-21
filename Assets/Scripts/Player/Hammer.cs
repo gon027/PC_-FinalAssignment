@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Hammer : MonoBehaviour
 {
-    private Animator animator;
+    // TODO: アニメーションの時間を取得して強制的に待機モーションにするようにする
+    
+    [SerializeField] private Animator animator;
  
     void Start()
     {
         animator = GetComponent<Animator>();
-        //Debug.Log(animator);
+        Debug.Log(animator);
     }
 
     void Update() {
@@ -19,6 +21,11 @@ public class Hammer : MonoBehaviour
     public void Action()
     {
         animator.SetBool("is_Action", true);
-//        animator.SetBool("is_Action", false);
+//        animator.Play("Action");
+    }
+
+    public void NoAction()
+    {
+        animator.SetBool("is_Action", false);
     }
 }

@@ -55,6 +55,7 @@ public class EnemyController : MonoBehaviour
     }
 
     // 敵を生成する
+    // TODO: 敵を切り替えるようにする 
     void GenerateEnemy()
     {
         for (int i = 0; i < 3; i++)
@@ -63,6 +64,7 @@ public class EnemyController : MonoBehaviour
             if (e.gameObject.activeSelf == false)
             {
                 bool exist = Utility.getRandomBool();
+                //bool kind = Utility.getRandomBool();
                 if (exist)
                 {
                     e.GetComponent<Character>().isActive = true;

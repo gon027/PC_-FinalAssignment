@@ -46,7 +46,7 @@ public class Character : MonoBehaviour
     {
         if(!isActive) yield break;
         
-        Debug.Log("Character::Test");
+        Debug.Log("Character::ActiveCheck");
 
         yield return new WaitForSeconds(Random.Range(2.0f, 4.0f));
         
