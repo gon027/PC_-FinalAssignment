@@ -7,21 +7,18 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject enemyController;
-    [SerializeField] private GameObject playerObject;
-    [SerializeField] private GameObject hammerObject;
+//    [SerializeField] private GameObject hammerObject;
     private EnemyController eController;
-    private Player player;
-    private Hammer hammer;
+//    private Hammer hammer;
     
     public int score { get; set; }
-    public static float MAXTIME = 60.0f;
+    public static float MAXTIME = 10.0f;
     public float time { get; set; }
     
     void Start()
     {
         eController = enemyController.GetComponent<EnemyController>();
-        player = playerObject.GetComponent<Player>();
-        hammer = hammerObject.GetComponent<Hammer>();
+//        hammer = hammerObject.GetComponent<Hammer>();
         
         time = GameManager.MAXTIME;
     }
@@ -34,8 +31,9 @@ public class GameManager : MonoBehaviour
 
     void CountTime()
     {
-        if (time >= MAXTIME)
+        if (!(time <= 0.0f))
         {
+            //Debug.Log(time);
             time -= Time.deltaTime;
         }
     }
@@ -44,10 +42,10 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            if (eController.moles[i].GetComponent<Character>().scoreCheck)
+            if (eController.moles[i].GetComponent<Character>().hitCheck)
             {
                 score++;
-                eController.moles[i].GetComponent<Character>().scoreCheck = false;
+                eController.moles[i].GetComponent<Character>().HideGameObject();
             }
         }
     }

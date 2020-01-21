@@ -30,8 +30,7 @@ public class PressTest : MonoBehaviour
         isPressedB = false;
         isPressedC = false;
     }
- 
-    // Update is called once per frame
+    
     void Update() {
         try{
             //Debug.Log (stream.ReadLine ());
@@ -61,10 +60,5 @@ public class PressTest : MonoBehaviour
         catch(System.Exception){
             
         } 
-    }
-
-    void MassageCheck(string _message, ref bool _isPressed)
-    {
-        
     }
 }

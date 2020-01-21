@@ -5,35 +5,52 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public bool hitCheck { get; set; }
-    public bool scoreCheck { get; set; }
+    public bool isActive { get; set; }
     
     void Start()
     {
         hitCheck = false;
+        isActive = false;
     }
 
     void Update()
     {
-        
+        StartCoroutine(ActiveCheck());
     }
     
     void  OnTriggerEnter(Collider other) {
         if (other.CompareTag("Hammer"))
         {
             Debug.Log("Mole::OnTriggerEnter");
-            hitCheck = true;
         }
     }
     
     void OnTriggerExit(Collider other)
     {
-        Debug.Log("Mole::OnTriggerExit");
+        //Debug.Log("Mole::OnTriggerExit");
         if (other.CompareTag("Hammer"))
         {
             Debug.Log("Mole::OnTriggerExit::IF");
-            hitCheck = false;
-            scoreCheck = true;
+            hitCheck = true;
+            isActive = false;
             this.gameObject.SetActive(false);
         }
+    }
+
+    public void HideGameObject()
+    {
+        hitCheck = false;
+    }
+
+    IEnumerator ActiveCheck()
+    {
+        if(!isActive) yield break;
+        
+        Debug.Log("Character::Test");
+
+        yield return new WaitForSeconds(Random.Range(2.0f, 4.0f));
+        
+        isActive = false;
+        this.gameObject.SetActive(false);
     }
 }

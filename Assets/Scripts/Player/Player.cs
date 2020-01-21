@@ -7,13 +7,18 @@ public class Player : MonoBehaviour
     private static readonly Vector3 pos1 = new Vector3(-2.13f, 1.38f, -4.8f);
     private static readonly Vector3 pos2 = new Vector3(1.45f, 1.38f, 0.2f);
     private static readonly Vector3 pos3 = new Vector3(3.82f, 1.38f, -4.8f);
-    
+
+//    [SerializeField] private GameObject pressTest;
+//    private PressTest pTest;
     [SerializeField] private GameObject hammer;
     private bool isVisible;
     private float existTime;
     
     void Start()
     {
+//        pTest = pressTest.GetComponent<PressTest>();
+//        Debug.Log(pTest.IsPressedA);
+
         hammer.SetActive(false);
         isVisible = false;
         existTime = 0.0f;
@@ -55,6 +60,8 @@ public class Player : MonoBehaviour
     {
         isVisible = true;
         hammer.SetActive(true);
+        hammer.GetComponent<Hammer>().Action();
         hammer.transform.position = _pos;
+//        hammer.SetActive(false);
     }
 }
