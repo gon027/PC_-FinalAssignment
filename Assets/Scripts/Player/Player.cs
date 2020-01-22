@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private static readonly Vector3 pos1 = new Vector3(-2.13f, 1.38f, -4.8f);
-    private static readonly Vector3 pos2 = new Vector3(1.45f, 1.38f, 0.2f);
-    private static readonly Vector3 pos3 = new Vector3(3.82f, 1.38f, -4.8f);
+    private static Vector3 pos1 = new Vector3(-2.13f, 1.38f, -4.8f);
+    private static Vector3 pos2 = new Vector3(1.45f, 1.38f, 0.2f);
+    private static Vector3 pos3 = new Vector3(3.82f, 1.38f, -4.8f);
 
+    [SerializeField] private GameObject hammer;
     [SerializeField] private GameObject pressTest;
     private PressTest pTest;
-    [SerializeField] private GameObject hammer;
-    private bool isVisible;
-    private float existTime;
+
+    private bool isRunning;
+    public bool IsRunning
+    {
+        set { isRunning = value; }
+    }
+
     private bool keyHitCheck1;
     private bool keyHitCheck2;
     private bool keyHitCheck3;
@@ -20,17 +25,31 @@ public class Player : MonoBehaviour
     void Start()
     {
         pTest = pressTest.GetComponent<PressTest>();
-        Debug.Log(pTest.IsPressedA);
+//        Debug.Log(pTest.IsPressedA);
 
-        isVisible = false;
-        existTime = 0.0f;
         keyHitCheck1 = false;
         keyHitCheck2 = false;
         keyHitCheck3 = false;
+
+        isRunning = false;
     }
 
     void Update()
     {
+        HammerControl();
+    }
+
+    void HammerPos(Vector3 _pos)
+    {
+        hammer.transform.position = _pos;
+        hammer.GetComponent<Hammer>().Action();
+    }
+
+    void HammerControl()
+    {
+        //if(!isRunning) return;
+        if (GameManager.gameState == GameState.None) return;
+
         if (Input.GetKey(KeyCode.A) || pTest.IsPressedA)
         {
             keyHitCheck1 = true;
@@ -40,8 +59,7 @@ public class Player : MonoBehaviour
         {
             keyHitCheck1 = false;
         }
-        
-        
+
         if (Input.GetKey(KeyCode.S) || pTest.IsPressedB)
         {
             keyHitCheck2 = true;
@@ -66,22 +84,5 @@ public class Player : MonoBehaviour
         {
             hammer.GetComponent<Hammer>().NoAction();
         }
-    }
-
-//    IEnumerator VisibleHammer()
-//    {
-//        while (isVisible)
-//        {
-//            
-//            yield return null;
-//        }
-//    }
-
-    void HammerPos(Vector3 _pos)
-    {
-        isVisible = true;
-        hammer.transform.position = _pos;
-        hammer.GetComponent<Hammer>().Action();
-        //keyHitCheck1 = true;
     }
 }

@@ -3,23 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// 時間管理、スコア管理、他クラスの値取得のクラス
-// 全ての責任を負わせない
 public class GameManager : MonoBehaviour
 {
+    
+    public static float MAXTIME = 5.0f;
+    
     [SerializeField] private GameObject enemyController;
     private EnemyController eController;
     
-    public int score { get; set; }
-    public static float MAXTIME = 5.0f;
+    public static int score { get; set; }
     public float time { get; set; }
     public bool timeupFlag { get; set; }
+    public static int countDownTime;
+
+    public static GameState gameState;
     
     void Start()
     {
         eController = enemyController.GetComponent<EnemyController>();
         time = GameManager.MAXTIME;
         timeupFlag = false;
+        score = 0;
+        countDownTime = 3;
+
+        gameState = GameState.None;
+
+        StartCoroutine(CountDown());
     }
 
     void Update()
@@ -31,18 +40,18 @@ public class GameManager : MonoBehaviour
 
     void CountTime()
     {
+        if(gameState == GameState.None) return;
+        
         if (!(time <= 0.0f))
         {
-            Debug.Log(time);
+//            Debug.Log(time);
             time -= Time.deltaTime;
         }
         else
         {
+            gameState = GameState.None;
             timeupFlag = true;
-            
         }
-
-        
     }
 
     void CalcScore()
@@ -64,18 +73,23 @@ public class GameManager : MonoBehaviour
             yield break;
         }
         
-        Debug.Log("Wait");
+//        Debug.Log("Wait");
         
         yield return new WaitForSeconds(3.0f);
-        Debug.Log("TimeUP!!");
-        
-        //SceneManager.LoadScene("Result");
+//        Debug.Log("TimeUP!!");
+//        
+        SceneManager.LoadScene("Result");
     }
 
     // スタート時カウントダウンする
-    IEnumerator CountDownTime()
+    IEnumerator CountDown()
     {
+        while (countDownTime > 0)
+        {
+            yield return new WaitForSeconds(1.0f);
+            countDownTime--;
+        }
 
-        yield return new WaitForSeconds(1.0f);
+        gameState = GameState.Running;
     }
 }

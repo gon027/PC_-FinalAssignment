@@ -5,17 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class Result : MonoBehaviour
 {
+    [SerializeField] private GameObject pressTest;
+    private PressTest pTest;
+    
     void Start()
     {
-        
+        pTest.GetComponent<PressTest>();
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log(12345678);
             SceneManager.LoadScene("Title");
         }
+
+//        if (pTest.IsPressedA || pTest.IsPressedB || pTest.IsPressedC)
+//        {
+//            SceneManager.LoadScene("Title");
+//        }
     }
 }

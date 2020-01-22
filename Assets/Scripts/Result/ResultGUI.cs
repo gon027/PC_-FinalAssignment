@@ -10,16 +10,15 @@ public class ResultGUI : MonoBehaviour
     private float updateTime;
     private float fadeSpeed = 0.5f;
     
-    // Start is called before the first frame update
     void Start()
     {
         scoreText.text = 0.ToString("00");
         updateTime = 0;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
+        scoreText.text = GameManager.score.ToString("00");
         returnText.color = FadeAlphaColor(returnText.color);
     }
     

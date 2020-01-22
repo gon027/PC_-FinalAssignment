@@ -32,10 +32,7 @@ public class EnemyController : MonoBehaviour
         for (int i = 0; i < moleLength; i++)
         {
             moles[i] = pearent.transform.GetChild(i).gameObject;
-            //moles[i].transform.gameObject.SetActive(false);
-//            Debug.Log();
         }
-        
 
         StartCoroutine(Exec());
     }
@@ -50,7 +47,7 @@ public class EnemyController : MonoBehaviour
         while (true)
         {
             GenerateEnemy();
-            yield return new WaitForSeconds(Random.Range(2.0f, 4.0f));
+            yield return new WaitForSeconds(Random.Range(1.5f, 3.0f));
         }
     }
 
