@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // 時間管理、スコア管理、他クラスの値取得のクラス
 // 全ての責任を負わせない
@@ -10,7 +11,7 @@ public class GameManager : MonoBehaviour
     private EnemyController eController;
     
     public int score { get; set; }
-    public static float MAXTIME = 10.0f;
+    public static float MAXTIME = 5.0f;
     public float time { get; set; }
     public bool timeupFlag { get; set; }
     
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
         else
         {
             timeupFlag = true;
+            
         }
 
         
@@ -66,5 +68,14 @@ public class GameManager : MonoBehaviour
         
         yield return new WaitForSeconds(3.0f);
         Debug.Log("TimeUP!!");
+        
+        //SceneManager.LoadScene("Result");
+    }
+
+    // スタート時カウントダウンする
+    IEnumerator CountDownTime()
+    {
+
+        yield return new WaitForSeconds(1.0f);
     }
 }
