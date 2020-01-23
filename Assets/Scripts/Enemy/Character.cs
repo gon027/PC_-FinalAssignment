@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    [SerializeField] private GameObject effect;
     public bool hitCheck { get; set; }
     public bool isActive { get; set; }
-    
+
     void Start()
     {
         hitCheck = false;
@@ -18,19 +19,19 @@ public class Character : MonoBehaviour
         StartCoroutine(ActiveCheck());
     }
     
-    void  OnTriggerEnter(Collider other) {
+    /*void  OnTriggerEnter(Collider other) {
         if (other.CompareTag("Hammer"))
         {
-            Debug.Log("Mole::OnTriggerEnter");
+            //Debug.Log("Mole::OnTriggerEnter");
         }
-    }
+    }*/
     
     void OnTriggerExit(Collider other)
     {
         //Debug.Log("Mole::OnTriggerExit");
         if (other.CompareTag("Hammer"))
         {
-            Debug.Log("Mole::OnTriggerExit::IF");
+            //Debug.Log("Mole::OnTriggerExit::IF");
             hitCheck = true;
             isActive = false;
             this.gameObject.SetActive(false);

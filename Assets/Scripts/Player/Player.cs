@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     private bool keyHitCheck1;
     private bool keyHitCheck2;
     private bool keyHitCheck3;
+
+    private float time;
     
     void Start()
     {
@@ -32,6 +34,10 @@ public class Player : MonoBehaviour
         keyHitCheck3 = false;
 
         isRunning = false;
+
+        time = 0.0f;
+
+        //StartCoroutine(UndoHammerAction());
     }
 
     void Update()
@@ -54,6 +60,7 @@ public class Player : MonoBehaviour
         {
             keyHitCheck1 = true;
             HammerPos(pos1);
+            time += Time.deltaTime;
         }
         else
         {
@@ -64,6 +71,7 @@ public class Player : MonoBehaviour
         {
             keyHitCheck2 = true;
             HammerPos(pos2);
+            time += Time.deltaTime;
         }
         else
         {
@@ -74,14 +82,35 @@ public class Player : MonoBehaviour
         {
             keyHitCheck3 = true;
             HammerPos(pos3);
+            time += Time.deltaTime;
         }
         else
         {
             keyHitCheck3 = false;
         }
 
+        if (time >= 0.25f)
+        {
+            hammer.GetComponent<Hammer>().NoAction();
+            time = 0;
+        }
+
         if (!keyHitCheck1 && !keyHitCheck2 && !keyHitCheck3)
         {
+            hammer.GetComponent<Hammer>().NoAction();
+            time = 0;
+        }
+    }
+
+    IEnumerator UndoHammerAction()
+    {
+        if (keyHitCheck1 || keyHitCheck2 || keyHitCheck3)
+        {
+            for (int i = 0; i < 60; i++)
+            {
+                yield return null;
+            }
+            
             hammer.GetComponent<Hammer>().NoAction();
         }
     }

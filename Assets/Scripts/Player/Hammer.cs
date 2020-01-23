@@ -11,11 +11,12 @@ public class Hammer : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        Debug.Log(animator);
+        //Debug.Log(animator);
     }
 
     void Update() {
         //Debug.Log("hit1 : " + hitMole1Check);
+//        Debug.Log();
     }
 
     public void Action()

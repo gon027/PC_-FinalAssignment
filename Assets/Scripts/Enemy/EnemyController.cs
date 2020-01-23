@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    private float[] delayTime = {2.5f, 2.0f, 1.5f};
+    public int currentIndex;
+//    private int popCount;
+    
     // 値を取得するためのGameObject
     [SerializeField] private GameObject hammerObject;
     private Hammer hammer;
@@ -18,6 +22,8 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        currentIndex = 0;
+        
         hammer = hammerObject.GetComponent<Hammer>();
 
         // ゲームが始まるともぐらのオブジェクトを全て非表示にする
@@ -39,7 +45,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        
+        Debug.Log(currentIndex);
     }
 
     IEnumerator Exec()
@@ -47,7 +53,7 @@ public class EnemyController : MonoBehaviour
         while (true)
         {
             GenerateEnemy();
-            yield return new WaitForSeconds(Random.Range(1.5f, 3.0f));
+            yield return new WaitForSeconds(delayTime[currentIndex]);
         }
     }
 
@@ -55,6 +61,8 @@ public class EnemyController : MonoBehaviour
     // TODO: 敵を切り替えるようにする 
     void GenerateEnemy()
     {
+        if (GameManager.gameState == GameState.None) return;
+        
         for (int i = 0; i < 3; i++)
         {
             var e = pearent.transform.GetChild(i);

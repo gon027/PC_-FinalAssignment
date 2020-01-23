@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     
-    public static float MAXTIME = 5.0f;
+    public static float MAXTIME = 45.0f;
     
     [SerializeField] private GameObject enemyController;
     private EnemyController eController;
@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
         CountTime();
         CalcScore();
         StartCoroutine(WaitSeconds());
+        StartCoroutine(SpeedUp());
     }
 
     void CountTime()
@@ -91,5 +92,22 @@ public class GameManager : MonoBehaviour
         }
 
         gameState = GameState.Running;
+    }
+
+    IEnumerator SpeedUp()
+    {
+        
+        
+        if (enemyController.GetComponent<EnemyController>().currentIndex == 0 && time <= 30)
+        {
+            enemyController.GetComponent<EnemyController>().currentIndex++;
+        }
+
+        if (enemyController.GetComponent<EnemyController>().currentIndex == 1 && time <= 15)
+        {
+            enemyController.GetComponent<EnemyController>().currentIndex++;
+        }
+        
+        yield return null;
     }
 }

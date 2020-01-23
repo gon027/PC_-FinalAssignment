@@ -393,6 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d50312eb63564d3a857096042629557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentIndex: 0
   hammerObject: {fileID: 409307724}
   pearent: {fileID: 673407097}
   mole: {fileID: 2220339906416317111, guid: 0eab0ecb3459a46c3afb8098ba5e4bbc, type: 3}
@@ -1693,7 +1694,7 @@ PrefabInstance:
     - target: {fileID: 8663891062050768975, guid: 488bd1741bfd047989a2031eead7718e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8663891062050768972, guid: 488bd1741bfd047989a2031eead7718e,
         type: 3}
